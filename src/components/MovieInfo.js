@@ -12,14 +12,36 @@ class MovieInfo extends React.Component {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify(this.props.title),
-	}).then(response => response.json())
-	// .then(data =>{
-	// 	console.log('Success:', this.props.title);
-	// })
-	.catch((error)=>{
-		console.log('Error:', error);
-	});
+		}).then(response => response.json())
+		// .then(data =>{
+			// 	console.log('Success:', this.props.title);
+			// })
+			.catch((error)=>{
+				console.log('Error:', error);
+			});
+		}
+	render() {
+		return (
+			console.log(this.props.title),
+		<>
+			<CardDeck>
+				<Card>
+					<Card.Body>
+						<h3>Title: {this.props.title}</h3>
+						<Card.Text>
+							Description: {this.props.overview}
+						</Card.Text>
+						<img src={"https://image.tmdb.org/t/p/w500" + this.props.url} alt={this.props.title}/>
+					</Card.Body>
+					<Button onClick={this.handleClick} variant="primary">Add to Fav</Button>
+				</Card>
+			</CardDeck>
+		</>
+		)
 	}
+}
+
+export default MovieInfo;
 	//FETCH TEMPLATE
 // 	fetch('https://example.com/profile', {
 //   method: 'POST', // or 'PUT'
@@ -36,26 +58,6 @@ class MovieInfo extends React.Component {
 //   console.error('Error:', error);
 // });
 	// }
-	render() {
-		return (
-			<>
-				<CardDeck>
-					<Card>
-						<Card.Body>
-							<h3>Title: {this.props.title}</h3>
-							<Card.Text>
-								Description: {this.props.overview}
-							</Card.Text>
-							<img src={"https://image.tmdb.org/t/p/w500" + this.props.url} alt={this.props.title}/>
-						</Card.Body>
-						<Button onClick={this.handleClick()} variant="primary">Add to Fav</Button>
-					</Card>
-				</CardDeck>
-            </>
-        )
-    }
-}
-
 // class MovieInfo extends React.Component {
 // 	render(){
 // 		console.log(this.props)
@@ -69,6 +71,3 @@ class MovieInfo extends React.Component {
 // 		)
 // 	}
 // }
-
-
-export default MovieInfo;
