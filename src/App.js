@@ -70,23 +70,23 @@ class App extends React.Component {
 
  //shows undefined
 
-const movies = [
-	{
-		title: "Spider Man: Far From Home",
-    description: "Peter Parker + Nic Fury + some handsome man",
-    path: "https://image.tmdb.org/t/p/w500"
-	},
-	{
-		title: "simba",
-    description: "blablabla",
-    genre: "educational"
-	},
-	{
-		title: "little mermaid",
-    description: "blablabla",
-    genre: "weird"
-	}
-];
+// const movies = [
+// 	{
+// 		title: "Spider Man: Far From Home",
+//     description: "Peter Parker + Nic Fury + some handsome man",
+//     path: "https://image.tmdb.org/t/p/w500"
+// 	},
+// 	{
+// 		title: "simba",
+//     description: "blablabla",
+//     genre: "educational"
+// 	},
+// 	{
+// 		title: "little mermaid",
+//     description: "blablabla",
+//     genre: "weird"
+// 	}
+// ];
 
 export default App;
 

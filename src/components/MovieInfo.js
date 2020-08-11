@@ -5,24 +5,32 @@ import Button from 'react-bootstrap/Button';
 
 class MovieInfo extends React.Component {
 
-	handleClick () {
-		fetch ("https://dateflix-backend.herokuapp.com/users/movies/5f3010c97e67b6001761f6eb", {
+	handleClick = () => {
+		fetch ("https://dateflix-backend.herokuapp.com/users/movies/5f300b2e2bf2340017767524", {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify(this.props.title),
+			body: JSON.stringify({title:this.props.title}),
 		}).then(response => response.json())
-		// .then(data =>{
-			// 	console.log('Success:', this.props.title);
-			// })
-			.catch((error)=>{
-				console.log('Error:', error);
-			});
-		}
+		.catch((error)=>{
+			console.log('Error:', error);
+		});
+	}
+	handleSubmit = () =>{
+		fetch("http://dateflix-backend.herokuapp.com/favmovies/:id",{
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			}
+		}).then(response => {return response.json()})
+		.catch((error)=>{
+			console.log('Error', error);
+		});
+	}
+	
 	render() {
 		return (
-			console.log(this.props.title),
 		<>
 			<CardDeck>
 				<Card>
@@ -33,12 +41,14 @@ class MovieInfo extends React.Component {
 						</Card.Text>
 						<img src={"https://image.tmdb.org/t/p/w500" + this.props.url} alt={this.props.title}/>
 					</Card.Body>
-					<Button onClick={this.handleClick} variant="primary">Add to Fav</Button>
+					<Button onClick={this.handleClick} variant="primary"> Add to Fav</Button>
+					<Button onClick={this.handleSubmit} varian="primary"> View </Button>
 				</Card>
 			</CardDeck>
 		</>
 		)
 	}
+	
 }
 
 export default MovieInfo;

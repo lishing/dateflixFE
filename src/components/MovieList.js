@@ -13,8 +13,9 @@ import MovieInfo from './MovieInfo.js';
 const MovieList = (props) => {
 	return(
 		<div className="all-movie-container">
-			{props.movies.map(movie=>
+			{props.movies.map((movie, index)=>
 				<MovieInfo
+				key={index}
 				title={movie.title}
 				id={movie.id}
 				overview={movie.overview}
