@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieInfo from './MovieInfo.js';
+import MovieInfo from './MovieInfo.js'
 
 // class MovieList extends React.Component {
 // 	render() {
@@ -10,11 +10,11 @@ import MovieInfo from './MovieInfo.js';
 // 	}
 // }
 
-const MovieList = (props) => {
-	console.log(props)
+const FavMovie = (props) => {
+	console.log("this fav", props)
 	return(
 		<div className="all-movie-container">
-			{props.movies.data.map((movie, index)=>
+			{props.fav.data.map((movie, index)=>
 				<MovieInfo
 				key={index}
 				title={movie.title}
@@ -26,4 +26,4 @@ const MovieList = (props) => {
 	)
 }
 
-export default MovieList;
+export default FavMovie;
