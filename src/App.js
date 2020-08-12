@@ -5,7 +5,7 @@ import Header from './components/Header.js';
 import MovieList from './components/MovieList.js';
 import {BrowserRouter as Route, Router, Switch} from "react-router-dom"
 import FavMovie from './components/FavMovie';
-import MyFav from './MyFav';
+import Profile from './components/Profile';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -15,7 +15,9 @@ class App extends React.Component {
       allMovies:null,
       favMovies:null,
       displayAllMovie:null,
-      displayFavMovie:null
+      displayFavMovie:null,
+      users:null,
+      displayProfile:null,
     }
   }    
   handleClickFav = async () =>{
@@ -23,23 +25,30 @@ class App extends React.Component {
     this.setState({
       favMovies: favMoviesList,
       displayFavMovie: true,
-      displayAllMovie: false
+      displayAllMovie: false,
+      displayProfile: false
     })
     console.log('this.state.favMovies', this.state.favMovies)
   } 
   handleClickHome = async () =>{
     const allMoviesList = await axios.get('https://dateflix-backend.herokuapp.com/movies')
     this.setState({
-      allMovies: allMoviesList 
+      allMovies: allMoviesList,
+      displayFavMovie: false,
+      displayAllMovie: true,
+      displayProfile: false
     })
     console.log(this.state.allMovies)
   }
   handleClickProfile = async () =>{
-    const favMoviesList = await axios.get('https://dateflix-backend.herokuapp.com/favmovies')
+    const users = await axios.get('https://dateflix-backend.herokuapp.com/users')
     this.setState({
-      favMovies: favMoviesList
+      users: users,
+      displayFavMovie: false,
+      displayAllMovie: false,
+      displayProfile: true
     })
-    console.log(this.state.favMovies)
+    console.log(this.state.users)
   } 
 
   componentDidMount = async () =>{
@@ -66,9 +75,9 @@ class App extends React.Component {
           {this.state.displayFavMovie ? 
            <FavMovie fav={this.state.favMovies ? this.state.favMovies : []}/> : 
           null }
-          {/* {this.state.displayProfile ? 
-           <Profile fav={this.state.Profile ? this.state.Profile : []}/> : 
-          null } */}
+          {this.state.displayProfile ? 
+           <Profile users={this.state.users ? this.state.users : []}/> : 
+          null }
          
         </div>
       )

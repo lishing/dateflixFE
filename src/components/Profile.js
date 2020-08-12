@@ -1,28 +1,18 @@
-// import React, { Profiler } from 'react';
+import React, { Component } from 'react'
 
-// // class MovieList extends React.Component {
-// // 	render() {
-// // 		const movies = this.props.moviesProps;
-// // 		return (
-// // 			<MovieInfo singleMovie={movies[0].title} />
-// // 		)
-// // 	}
-// // }
+export class Profile extends Component {
+    render() {
+        console.log(this.props)
+        return (
+            <div>
+                <h2>this is a profile page!</h2>
+                <h3>{this.props.users.data[0].username}</h3>
+                <h3>{this.props.users.data[0].gender}</h3>
+                <h3>{this.props.users.data[0].interestedIn}</h3>
+                <h3>{this.props.users.data[0].favMovies[0]}</h3>
+            </div>
+        )
+    }
+}
 
-// const MovieList = (props) => {
-// 	console.log(props)
-// 	return(
-// 		<div className="all-movie-container">
-// 			{props.movies.data.map((movie, index)=>
-// 				<MovieInfo
-// 				key={index}
-// 				title={movie.title}
-// 				id={movie.id}
-// 				overview={movie.overview}
-// 				url={movie.poster_path}/>
-// 			)}
-// 		</div>
-// 	)
-// }
-
-// export default Profile;
+export default Profile
