@@ -28,7 +28,7 @@ export class Profile extends Component {
             age:this.state.age,
             gender:this.state.gender
         }
-        const users = await axios.put(`https://dateflix-backend.herokuapp.com/users/${this.props.users.data[0]._id}`, 
+        await axios.put(`https://dateflix-backend.herokuapp.com/users/${this.props.users.data[0]._id}`, 
         payload)
     }
     handleChange = event => {

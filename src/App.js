@@ -3,7 +3,6 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header.js';
 import MovieList from './components/MovieList.js';
-import {BrowserRouter as Route, Router, Switch} from "react-router-dom"
 import FavMovie from './components/FavMovie';
 import Profile from './components/Profile';
 import axios from 'axios';

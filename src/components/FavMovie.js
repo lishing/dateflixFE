@@ -1,15 +1,6 @@
 import React from 'react';
 import FavInfo from './FavInfo.js'
 
-// class MovieList extends React.Component {
-// 	render() {
-// 		const movies = this.props.moviesProps;
-// 		return (
-// 			<MovieInfo singleMovie={movies[0].title} />
-// 		)
-// 	}
-// }
-
 const FavMovie = (props) => {
 	console.log("this fav", props)
 	return(
