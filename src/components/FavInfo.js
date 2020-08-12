@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Button from 'react-bootstrap/Button';
 
-class MovieInfo extends React.Component {
+class FavInfo extends React.Component {
 
 	handleClick = () => {
 		fetch ("https://dateflix-backend.herokuapp.com/users/movies/5f300b2e2bf2340017767524", {
@@ -36,7 +36,9 @@ class MovieInfo extends React.Component {
 			headers: {
 				'Content-Type': 'application/json',
 			}
-		}).then(response => {return response.json()})
+		}).then(response => {
+			window.location.reload(false)	
+		})
 		.catch((error)=>{
 			console.log('Error', error);
 		});
@@ -65,7 +67,7 @@ class MovieInfo extends React.Component {
 	
 }
 
-export default MovieInfo;
+export default FavInfo;
 	//FETCH TEMPLATE
 // 	fetch('https://example.com/profile', {
 //   method: 'POST', // or 'PUT'
