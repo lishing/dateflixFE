@@ -9,7 +9,7 @@ const MovieList = (props) => {
 				<MovieInfo
 				key={index}
 				title={movie.title}
-				id={movie.id}
+				id={movie._id}
 				overview={movie.overview}
 				url={movie.poster_path}/>
 			)}
