@@ -28,6 +28,7 @@ class FavInfo extends React.Component {
 			console.log('Error', error);
 		});
 	}
+	//does not appear on the page, but it is recorded in mongoDB.
 	handleDelete = () =>{
 		const id = this.props.id
 		console.log("this is id", id)
@@ -37,6 +38,7 @@ class FavInfo extends React.Component {
 				'Content-Type': 'application/json',
 			}
 		}).then(response => {
+			//this is a forced restart of the browser, need a better way to handle a new page from a deleted item
 			window.location.reload(false)	
 		})
 		.catch((error)=>{
@@ -45,6 +47,7 @@ class FavInfo extends React.Component {
 	}
 	
 	render() {
+		console.log(this.props.url)
 		return (
 		<>
 			<CardDeck>
@@ -54,10 +57,9 @@ class FavInfo extends React.Component {
 						<Card.Text>
 							Description: {this.props.overview}
 						</Card.Text>
-						<img src={"https://image.tmdb.org/t/p/w500" + this.props.url} alt={this.props.title}/>
+						{/* image does not work properly*/}
+						<img src={"https://image.tmdb.org/t/p/w500"+this.props.url} alt={this.props.title}/>
 					</Card.Body>
-					<Button onClick={this.handleClick} variant="primary"> Add to Fav</Button>
-					<Button onClick={this.handleSubmit} varian="primary"> View </Button>
 					<Button onClick={this.handleDelete} varian="primary"> Delete </Button>
 				</Card>
 			</CardDeck>

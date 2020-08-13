@@ -56,7 +56,6 @@ class MovieInfo extends React.Component {
 					</Card.Body>
 					<Button onClick={this.handleClick} variant="primary"> Add to Fav</Button>
 					<Button onClick={this.handleSubmit} varian="primary"> View </Button>
-					<Button onClick={this.handleDelete} varian="primary"> Delete </Button>
 				</Card>
 			</CardDeck>
 		</>

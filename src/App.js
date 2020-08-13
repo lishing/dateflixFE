@@ -71,13 +71,12 @@ class App extends React.Component {
           {this.state.displayAllMovie ? 
           <MovieList movies={this.state.allMovies ? this.state.allMovies : []} /> : 
           null }
-          {this.state.displayFavMovie ? 
-           <FavMovie fav={this.state.favMovies ? this.state.favMovies : []}/> : 
-          null }
           {this.state.displayProfile ? 
            <Profile users={this.state.users ? this.state.users : []}/> : 
           null }
-         
+          {this.state.displayFavMovie ? 
+           <FavMovie fav={this.state.favMovies ? this.state.favMovies : []}/> : 
+          null }
         </div>
       )
     }
