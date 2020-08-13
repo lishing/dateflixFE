@@ -55,6 +55,7 @@ export class Profile extends Component {
                 </Form.Group>
                 <Button onClick={this.handleUpdate} varian="primary"> Update </Button>
                 </Form>
+                {/* Show Page */}
                 <h2>Hi {this.state.username}</h2>
                 <h3>Gender: {this.state.gender}</h3>
                 <h3>Age:{this.state.age}</h3>

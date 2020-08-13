@@ -13,6 +13,7 @@ class Header extends React.Component {
         this.props.handleClickProfile()
     }
     render (){
+        // we use button instead of direct links, did not use Router.
         return (
             <div>
                 <Button onClick={this.handleClickHome} variant="primary"> Home</Button>
