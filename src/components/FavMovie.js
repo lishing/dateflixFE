@@ -12,7 +12,7 @@ const FavMovie = (props) => {
 				title={movie.title}
 				id={movie._id}
 				overview={movie.overview}
-				url={movie.url}/>
+				url={movie.poster_path}/>
 			)}
 		</div>
 	)

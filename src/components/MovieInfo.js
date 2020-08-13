@@ -11,7 +11,9 @@ class MovieInfo extends React.Component {
 			headers: {
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({title:this.props.title}),
+			body: JSON.stringify({title:this.props.title, 
+				overview: this.props.overview,
+				poster_path: "https://image.tmdb.org/t/p/500" + this.props.poster_path} ),
 		}).then(response => response.json())
 		.catch((error)=>{
 			console.log('Error:', error);
