@@ -7,6 +7,9 @@ import FavMovie from './components/FavMovie';
 import Profile from './components/Profile';
 import axios from 'axios';
 
+//View particular movie in fav movie
+//update fav movie details 
+
 class App extends React.Component {
   constructor(){
     super();

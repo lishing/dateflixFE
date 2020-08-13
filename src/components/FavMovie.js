@@ -2,7 +2,6 @@ import React from 'react';
 import FavInfo from './FavInfo.js'
 
 const FavMovie = (props) => {
-	const url = "https://image.tmdb.org/t/p/w500" + props.poster_path
 	return(
 		<div className="all-movie-container">
 			{props.fav.data.map((movie, index)=>
@@ -11,7 +10,8 @@ const FavMovie = (props) => {
 				title={movie.title}
 				id={movie._id}
 				overview={movie.overview}
-				url={movie.poster_path}/>
+				popularity={movie.popularity}
+				poster_path={movie.poster_path}/>
 			)}
 		</div>
 	)

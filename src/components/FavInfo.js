@@ -23,6 +23,7 @@ class FavInfo extends React.Component {
 	}
 	
 	render() {
+		console.log("poster", this.props.poster_path)
 		return (
 		<>
 			<CardDeck>
@@ -33,7 +34,7 @@ class FavInfo extends React.Component {
 							Description: {this.props.overview}
 						</Card.Text>
 						{/* image does not work properly*/}
-						<img src={"https://image.tmdb.org/t/p/w500"+this.props.url} alt={this.props.title}/>
+						<img src={"https://image.tmdb.org/t/p/w500" + this.props.poster_path} alt={this.props.title}/>
 					</Card.Body>
 					<Button onClick={this.handleDelete} varian="primary"> Delete </Button>
 				</Card>
