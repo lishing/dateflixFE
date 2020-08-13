@@ -63,7 +63,6 @@ class MovieInfo extends React.Component {
 						<h3>Title: {this.props.title}</h3>
 						<Card.Text>
 							Description: {this.props.overview}
-							Popularity: {this.props.url}
 						</Card.Text>
 						<img src= {URL_HEAD + URL_TAIL}/>
 					</Card.Body>
