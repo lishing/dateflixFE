@@ -5,29 +5,6 @@ import Button from 'react-bootstrap/Button';
 
 class FavInfo extends React.Component {
 
-	handleClick = () => {
-		fetch ("https://dateflix-backend.herokuapp.com/users/movies/5f300b2e2bf2340017767524", {
-			method: 'PUT',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({title:this.props.title}),
-		}).then(response => response.json())
-		.catch((error)=>{
-			console.log('Error:', error);
-		});
-	}
-	handleSubmit = () =>{
-		fetch("http://dateflix-backend.herokuapp.com/favmovies/:id",{
-			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json',
-			}
-		}).then(response => {return response.json()})
-		.catch((error)=>{
-			console.log('Error', error);
-		});
-	}
 	//does not appear on the page, but it is recorded in mongoDB.
 	handleDelete = () =>{
 		const id = this.props.id
