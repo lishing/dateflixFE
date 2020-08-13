@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+.modal-open .modal {
+  overflow-y: auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

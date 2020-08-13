@@ -12,18 +12,22 @@ export class FavMovieOne extends Component {
             id:this.props._id,
         }
     }
-    componentDidMount = () =>{
+    componentDidMount = async () =>{
+        const oneFavMovie = await axios.get(`https://dateflix-backend.herokuapp.com/favmovies/${_id}`)
         this.setState({
-            title: this.props.title,
-            overview: this.props.overview,
+          allMovies: allMoviesList,
+          displayAllMovie : false,
+          displayOneMovie: true
         })
-    }
+        console.log('this.state.allMovies', this.state.allMovies) 
+      }
+    
     handleUpdate = async (event) =>{
         event.preventDefault()
         const payload = {
             title:this.state.title,
             overview:this.state.overview,
-            id:this.state.id
+            id:this.state._id
         }
         await axios.put(`https://dateflix-backend.herokuapp.com/favmovies/${_id}`, 
         payload)
@@ -51,7 +55,7 @@ export class FavMovieOne extends Component {
                 {/* Show Page */}
                 <h2>Title: {this.state.title}</h2>
                 <p>Overview: {this.state.overview}</p>
-                {/* {this.props.users.data[0].favMovies.map ( (movie,index) => {
+                {/* {this.props.favmovies.data.map ( (movie,index) => {
                     return <p key={index}>{movie.title} </p> })} */}
             </div>
         )

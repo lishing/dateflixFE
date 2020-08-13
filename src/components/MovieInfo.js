@@ -27,18 +27,7 @@ class MovieInfo extends React.Component {
 		});
 		console.log("clickfav", this.props.poster_path)
 	}
-	// handleClickViewOne = () =>{
-	// 	const id = this.props.title
-	// 	fetch(`http://dateflix-backend.herokuapp.com/favmovies/${title}`,{
-	// 		method: 'GET',
-	// 		headers: {
-	// 			'Content-Type': 'application/json',
-	// 		}
-	// 	}).catch((error)=>{
-	// 		console.log('Error', error);
-	// 	});
-	// 	console.log(this.props)
-	// }
+	
 	// handleClickViewOne = async () =>{
 	// 	const id = this.props.id
 	// 	const favMoviesOne = await axios.get(`http://dateflix-backend.herokuapp.com/favmovies/${id}`, {
@@ -78,7 +67,6 @@ class MovieInfo extends React.Component {
 						<img src= {URL_HEAD + URL_TAIL}/>
 					</Card.Body>
 					<Button onClick={this.handleClickFav} variant="primary"> Add to Fav</Button>
-					<Button onClick={this.handleClickViewOne} varian="primary"> View </Button>
 				</Card>
 			</CardDeck>
 		</>

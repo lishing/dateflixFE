@@ -3,16 +3,21 @@ import {Form, Button} from 'react-bootstrap'
 import axios from 'axios'
 
 
+
 export class Profile extends Component {
     constructor(props) {
         super(props)
-    
         this.state = {
             username: this.props.users.data[0].username,
             gender: this.props.users.data[0].gender,
             age: this.props.users.data[0].age,
             
         }
+    }
+    toggle = () => {
+        this.setState({
+          modal: !this.state.modal
+        });
     }
     componentDidMount = () =>{
         this.setState({
@@ -62,6 +67,7 @@ export class Profile extends Component {
                 <h3>Fav Movies: </h3>
                 {this.props.users.data[0].favMovies.map ( (movie,index) => {
                     return <p key={index}>{movie.title} </p> })}
+                
             </div>
         )
     }
