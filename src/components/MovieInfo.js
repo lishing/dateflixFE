@@ -19,13 +19,13 @@ class MovieInfo extends React.Component {
 			},
 			body: JSON.stringify({title:this.props.title, 
 				overview: this.props.overview,
-				poster_path: this.props.poster_path,
+				poster_path: this.props.url,
 				popularity: this.props.popularity} ),
 		}).then(response => response.json())
 		.catch((error)=>{
 			console.log('Error:', error);
 		});
-		console.log("clickfav", this.props.poster_path)
+		console.log("clickfav", this.props.url)
 	}
 	
 	// handleClickViewOne = async () =>{
@@ -63,6 +63,7 @@ class MovieInfo extends React.Component {
 						<h3>Title: {this.props.title}</h3>
 						<Card.Text>
 							Description: {this.props.overview}
+							Popularity: {this.props.url}
 						</Card.Text>
 						<img src= {URL_HEAD + URL_TAIL}/>
 					</Card.Body>
