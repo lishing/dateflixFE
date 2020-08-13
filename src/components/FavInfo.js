@@ -90,11 +90,10 @@ class FavInfo extends React.Component {
         <Modal.Header closeButton>
           <Modal.Title>{this.props.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{this.props.overview}</Modal.Body>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Overview</Form.Label>
-                    <Form.Control as="textarea" rows="3" onChange={this.handleChange} name="overview" value={this.state.overview} />
-                </Form.Group>     
+        <Form.Group controlId="formBasicEmail">
+            <Modal.Title>Overview</Modal.Title>
+            <Form.Control as="textarea" rows="3" onChange={this.handleChange} name="overview" value={this.state.overview} />
+        </Form.Group>     
         <Modal.Footer>
           <Button variant="secondary" onClick={this.toggleClose}>
             Close
@@ -105,10 +104,8 @@ class FavInfo extends React.Component {
         </Modal.Footer>
 		</Form>
       </Modal>	
-                    
-				</Card>
-				
-			</CardDeck>
+    </Card>
+	</CardDeck>
 
 		</>
 		)
