@@ -8,7 +8,6 @@ class FavInfo extends React.Component {
 	//does not appear on the page, but it is recorded in mongoDB.
 	handleDelete = () =>{
 		const id = this.props.id
-		console.log("this is id", id)
 		fetch(`http://dateflix-backend.herokuapp.com/favmovies/${id}`,{
 			method: 'DELETE',
 			headers: {
@@ -24,7 +23,6 @@ class FavInfo extends React.Component {
 	}
 	
 	render() {
-		console.log(this.props.url)
 		return (
 		<>
 			<CardDeck>

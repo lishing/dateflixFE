@@ -2,7 +2,6 @@ import React from 'react';
 import MovieInfo from './MovieInfo.js';
 
 const MovieList = (props) => {
-	console.log(props)
 	return(
 		<div className="all-movie-container">
 			{props.movies.data.map((movie, index)=>
