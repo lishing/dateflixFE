@@ -28,19 +28,6 @@ class MovieInfo extends React.Component {
 			console.log('Error', error);
 		});
 	}
-	handleDelete = () =>{
-		const id = this.props.id
-		console.log("this is id", id)
-		fetch(`http://dateflix-backend.herokuapp.com/favmovies/${id}`,{
-			method: 'DELETE',
-			headers: {
-				'Content-Type': 'application/json',
-			}
-		}).then(response => {return response.json()})
-		.catch((error)=>{
-			console.log('Error', error);
-		});
-	}
 	
 	render() {
 		return (
