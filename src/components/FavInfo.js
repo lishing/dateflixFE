@@ -27,7 +27,7 @@ class FavInfo extends React.Component {
 	//does not appear on the page, but it is recorded in mongoDB.
 	handleDelete = () =>{
 		const id = this.props.id
-		fetch(`http://dateflix-backend.herokuapp.com/favmovies/${id}`,{
+		fetch(`https://dateflix-backend.herokuapp.com/favmovies/${id}`,{
 			method: 'DELETE',
 			headers: {
 				'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ class FavInfo extends React.Component {
 	handleClickViewOne = () =>{
 		const id = this.props.id
 		console.log(id)
-		fetch(`http://dateflix-backend.herokuapp.com/favmovies/${id}`,{
+		fetch(`https://dateflix-backend.herokuapp.com/favmovies/${id}`,{
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ class FavInfo extends React.Component {
         const payload = {
             overview:this.state.overview,
         }
-        await axios.put(`http://dateflix-backend.herokuapp.com/favmovies/${id}`, 
+        await axios.put(`https://dateflix-backend.herokuapp.com/favmovies/${id}`, 
 		payload)
 		this.toggleClose()
 		window.location.reload(false)
