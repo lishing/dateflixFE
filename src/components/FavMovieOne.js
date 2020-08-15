@@ -29,7 +29,7 @@ export class FavMovieOne extends Component {
             overview:this.state.overview,
             id:this.state._id
         }
-        await axios.put(`https://dateflix-backend.herokuapp.com/favmovies/${_id}`, 
+        await axios.put(`http://dateflix-backend.herokuapp.com/favmovies/${id}`, 
         payload)
     }
     handleChange = event => {
@@ -62,4 +62,4 @@ export class FavMovieOne extends Component {
     }
 }
 
-export default FavMovieOne
+export default FavMovieOne;

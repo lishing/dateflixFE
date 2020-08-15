@@ -18,7 +18,7 @@ class Header extends React.Component {
             <div>
                 <Button onClick={this.handleClickHome} variant="primary"> Home</Button>
                 <Button onClick={this.handleClickProfile} variant="primary"> Profile</Button>
-                <Button onClick={this.handleClickFav} variant="primary">View Fav</Button>
+                <Button onClick={this.handleClickFav} variant="primary">View All Favorites</Button>
             </div>
 
         )
